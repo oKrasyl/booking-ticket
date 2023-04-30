@@ -57,7 +57,20 @@ public class BookingService {
     }
 
     public Event getEventByID(Long id){
-        return this.eventRepository.getReferenceById(id);
+        return this.eventRepository.findEventByEventId(id);
+    }
+
+    public void createEvent(String eventTitle, String eventPlace, Date eventDate){
+        Event event = new Event();
+        event.setEventDate(eventDate);
+        event.setEventTitle(eventTitle);
+        event.setEventPlace(eventPlace);
+        event = eventRepository.save(event);
+    }
+
+    public List<Event> getEventByTitle(String title){
+        Iterable<Event> events = this.eventRepository.findEventByEventTitle(title);
+        return (List<Event>) events;
     }
 }
 

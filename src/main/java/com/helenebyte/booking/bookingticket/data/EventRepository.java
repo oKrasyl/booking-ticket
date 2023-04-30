@@ -10,4 +10,6 @@ import java.sql.Date;
 public interface EventRepository extends JpaRepository<Event, Long> {
 
     Iterable<Event> findEventByEventDate(Date date);
+    Event findEventByEventId(Long id);
+    Iterable<Event> findEventByEventTitle(String title);
 }

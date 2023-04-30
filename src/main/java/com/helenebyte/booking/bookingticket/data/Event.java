@@ -10,7 +10,7 @@ public class Event {
 
     @Id
     @Column(name="EVENT_ID")
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long eventId;
     @Column(name="EVENT_TITLE")
     private String eventTitle;

@@ -23,10 +23,16 @@ public class AppStartEvent implements ApplicationListener<ApplicationReadyEvent>
 
     @Override
     public void onApplicationEvent(ApplicationReadyEvent event) {
-Date date = this.dateUtils.createDatefromDateString("2022-03-01");
+        Date date = this.dateUtils.createDatefromDateString("2022-03-01");
         List<EventTicket> tickets = this.bookingService.getEventTicketBookingForDate(date);
         tickets.forEach(x-> System.out.println(x));
-        Long id = 2L;
+        Long id = 1L;
         System.out.println(bookingService.getEventByID(id));
+        bookingService.createEvent("Jazz nad Odra", "Wroclaw", date);
+        bookingService.createEvent("Jazz nad Odra1", "Wroclaw", date);
+        bookingService.createEvent("Jazz nad Odra2", "Wroclaw", date);
+        bookingService.createEvent("Jazz nad Odra3", "Wroclaw", date);
+        bookingService.createEvent("Jazz nad Odra4", "Wroclaw", date);
+        System.out.println(bookingService.getEventByTitle("Jazz nad Odra2"));
     }
 }
