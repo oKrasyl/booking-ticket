@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Bookings: Book Ticket</title>
+</head>
+<body>
+<h1>Welcome to the Bookings Page</h1>
+<table>
+    <tr>
+        <td>Event Title</td>
+        <td>Guest First Name</td>
+        <td>Guest</td>
+    </tr>
+    <tr th:each="booking: ${bookings}">
+        <td th:text="${booking.eventTitle}">Event Title</td>
+        <td th:text="${booking.FirstName}">Event Title</td>
+
+
+    </tr>
+</table>
+</body>
+</html>
